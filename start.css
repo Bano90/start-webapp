@@ -1,38 +1,9 @@
-.header {
-  padding: 60px;
-  background-image: url(../web_img/header-woman.jpg);
-  background-repeat: no-repeat;
-  background-position: left top;
-  background-color: #001E3A;
-  text-align: right;
-  color: #ffffff;
-  font-size: 20px;
-}
-.topnav {
-    overflow: hidden;
-    background-color: #32485e;
-  }
+.white {color: #ffffff;}
+.text-center { text-align: center;}
+.text-right { text-align: right;}
 
-.topnav ul{
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #32485e;
-}
-
-.topnav li {
-  float: left;
-}
-  
-.topnav li a {
-    display: block;
-    color: #ffffff;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-.topnav li a:hover {
-    background-color: #001E3A;
+.myhead {
+  background-color: #000d42;
+  color: #ffffff!important;
+  text-align: center;
 }

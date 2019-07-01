@@ -1,40 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Start</title>
-    <link rel="stylesheet" href="../components/bootstrap.css"></link>
-    <link rel="stylesheet" href="start.css"></link>
+    <link rel="stylesheet"
+        href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="start.css">
+    </link>
 </head>
-<body ng-app="app">
-    <div class="header">
-        <div class="container">
-            <div>
-                <span>Alap lap cím</span>
-            </div>
-        </div>
-    </div>
-    <div class="topnav">
-        <div class="container">
-             <ul >   
-                <li><a ui-sref="dashboard">Home</a></li>
-            </ul>
-        </div>
+
+<body ng-app="app" ng-cloak>
+    <div class="container" layout="row" layout-fill>
+        <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="3">
+            <md-toolbar class="md-primary">
+                <div class="md-toolbar-tools">
+                    <i class="material-icons white">apps</i>
+                    <h1 class="md-toolbar-tools white" flex>Navigáció</h1>
+                    <md-button ng-click="close()" class="md-icon-button">
+                        <md-icon>
+                            <i class="material-icons green">close</i>
+                        </md-icon>
+                    </md-button>
+                </div>
+            </md-toolbar>
+
+            <md-content>
+                <md-list flex>
+                    <md-list-item ui-sref="dashboard" ng-click="close()">
+                        <div flex class="md-list-item-text">Vezérlőpult</div>
+                        <md-icon class="material-icons">dashboardk</md-icon>
+                    </md-list-item>
+                </md-list>
+                <md-divider></md-divider>
+            </md-content>
+        </md-sidenav>
+        <md-content flex>
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <md-button class="md-icon-button" aria-label="More" ng-click="open()">
+                        <md-icon>
+                            <i class="material-icons" style="color:#ffffff">apps</i>
+                        </md-icon>
+                    </md-button>
+                    <h1 flex md-truncate style="padding-left: 10px;font-size: 24px;font-weight:bold;" class="myhead"
+                        layout="row">
+                        <span flex hide-sm hide-xs style="line-height:64px;">Mobil Teszt</span>
+                    </h1>
+                </div>
+            </md-toolbar>
+            <div ui-view layout-align="center center"></div>
+        </md-content>
     </div>
 
-    <div style="margin: 20px auto;" ui-view></div>
-
-    <script src="../components/angular.min.js"></script>
-    <script src="../components/angular-ui-router.min.js"></script>
-    <script src="../components/jquery.min.js"></script>
-    <script src="../components/bootstrap.min.js"></script>
-    <script src="../components/Chart.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.7/angular-ui-router.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--script src="../components/Chart.min.js"></script-->
     <!---->
     <script src="app/app.js"></script>
     <script src="app/config.js"></script>
+    <script src="app/mdconfig.js"></script>
     <script src="app/run.js"></script>
     <script src="app/components/dashboard/dashboard.ctrl.js"></script>
     <script src="app/components/services/dashboard.service.js"></script>
 </body>
+
 </html>
