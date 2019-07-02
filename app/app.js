@@ -3,5 +3,6 @@
   angular.module('app', [
     'ngAnimate',
     'ngMaterial',
-    'ui.router']);
+    'ui.router',
+    'md.data.table']);
 })();

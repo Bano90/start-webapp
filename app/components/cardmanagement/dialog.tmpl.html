@@ -1,0 +1,32 @@
+<md-dialog aria-label="Új kártya rögítése">
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Komment</h2>
+                <span flex></span>
+                <md-icon class="material-icons" ng-click="cancel()">cancel</md-icon>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div layout="row" style="margin-top:10px">
+                <span class="input-group-addon">Név</span>
+                <input type="text" class="form-control" ng-model="name">
+                <span class="input-group-addon">Kód</span>
+                <input type="text" class="form-control" ng-model="code">
+                <span class="input-group-addon">Beosztás</span>
+                <input type="text" class="form-control" ng-model="status">
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button ng-click="answer(id,name,code,status)">
+                Mentés
+            </md-button>
+            <md-button ng-click="cancel()" class="md-primary">
+                Mégse
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

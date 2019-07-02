@@ -1,0 +1,40 @@
+<md-content layout="row" layout-sm="column" layout-xs="column" flex-gt-sm="80" flex-offset-gt-sm="10">
+    <div layout-padding flex>
+        <h1 class="md-display-2" layout="row">
+            <span flex>Hálózati beállítások</span>
+            <md-button class="md-fab md-primary md-hue-2">
+                <md-icon class="material-icons">network_wifi</md-icon>
+            </md-button>
+        </h1>
+        <md-divider>
+            <div layout-gt-xs="row">
+                <md-input-container>
+                    <label>Lehetőség:</label>
+                    <md-select ng-model="vm.actoption" ng-change="">
+                        <md-option ng-repeat="op in vm.options" ng-value="op">{{op}}</md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container ng-show="vm.actoption=='LAN'">
+                    <label>DHCP/FIX:</label>
+                    <md-select ng-model="vm.lanactoption" ng-change="">
+                        <md-option ng-repeat="ln in vm.lanoptions" ng-value="ln">{{ln}}</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+            <div layout-gt-xs="row" ng-show="vm.actoption=='LAN' && vm.lanactoption=='FIX IP'">
+                <div flex=25>
+                    <span>IP:</span>
+                    <input type="text">
+                </div>
+                <div flex=25>
+                    <span>Maszk:</span>
+                    <input type="text">
+                </div>
+                <div flex=25>
+                    <span>Gateway:</span>
+                    <input type="text">
+                </div>
+            </div>
+        </md-divider>
+    </div>
+</md-content>

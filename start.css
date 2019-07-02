@@ -7,3 +7,15 @@
   color: #ffffff!important;
   text-align: center;
 }
+
+.md-table .md-head{
+  background-color: #000d42;
+  color: #ffffff!important;
+}
+.md-table .md-head .md-column {
+  background-color: #000d42;
+  color: #ffffff!important;
+}
+.md-cell {
+  text-align: center;
+}

@@ -8,6 +8,9 @@
     <title>Start</title>
     <link rel="stylesheet"
         href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/angular-material-data-table/0.10.10/md-data-table.min.css">
+    <link rel="icon" href="../../../web_img/favicon.ico">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="start.css">
     </link>
@@ -22,7 +25,7 @@
                     <h1 class="md-toolbar-tools white" flex>Navigáció</h1>
                     <md-button ng-click="close()" class="md-icon-button">
                         <md-icon>
-                            <i class="material-icons green">close</i>
+                            <i class="material-icons white">close</i>
                         </md-icon>
                     </md-button>
                 </div>
@@ -33,6 +36,18 @@
                     <md-list-item ui-sref="dashboard" ng-click="close()">
                         <div flex class="md-list-item-text">Vezérlőpult</div>
                         <md-icon class="material-icons">dashboardk</md-icon>
+                    </md-list-item>
+                    <md-list-item ui-sref="network" ng-click="close()">
+                        <div flex class="md-list-item-text">Hálózati beállítások</div>
+                        <md-icon class="material-icons">network_wifi</md-icon>
+                    </md-list-item>
+                    <md-list-item ui-sref="cardmanagement" ng-click="close()">
+                        <div flex class="md-list-item-text">Mesterkártyák kezelése</div>
+                        <md-icon class="material-icons">credit_card</md-icon>
+                    </md-list-item>
+                    <md-list-item ui-sref="servicepage" ng-click="close()">
+                        <div flex class="md-list-item-text">Szervízlap</div>
+                        <md-icon class="material-icons">crop_3_2</md-icon>
                     </md-list-item>
                 </md-list>
                 <md-divider></md-divider>
@@ -63,6 +78,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-messages.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/angular-material-data-table/0.10.10/md-data-table.min.js"></script>
     <!--script src="../components/Chart.min.js"></script-->
     <!---->
     <script src="app/app.js"></script>
@@ -70,7 +87,13 @@
     <script src="app/mdconfig.js"></script>
     <script src="app/run.js"></script>
     <script src="app/components/dashboard/dashboard.ctrl.js"></script>
+    <script src="app/components/network/network.ctrl.js"></script>
+    <script src="app/components/cardmanagement/cardmanagement.ctrl.js"></script>
+    <script src="app/components/servicepage/servicepage.ctrl.js"></script>
     <script src="app/components/services/dashboard.service.js"></script>
+    <script src="app/components/services/network.service.js"></script>
+    <script src="app/components/services/cardmanagement.service.js"></script>
+    <script src="app/components/services/servicepage.service.js"></script>
 </body>
 
 </html>
