@@ -10,13 +10,13 @@
             <div layout-gt-xs="row">
                 <md-input-container>
                     <label>Lehetőség:</label>
-                    <md-select ng-model="vm.actoption" ng-change="">
+                    <md-select ng-model="vm.actoption">
                         <md-option ng-repeat="op in vm.options" ng-value="op">{{op}}</md-option>
                     </md-select>
                 </md-input-container>
                 <md-input-container ng-show="vm.actoption=='LAN'">
                     <label>DHCP/FIX:</label>
-                    <md-select ng-model="vm.lanactoption" ng-change="">
+                    <md-select ng-model="vm.lanactoption">
                         <md-option ng-repeat="ln in vm.lanoptions" ng-value="ln">{{ln}}</md-option>
                     </md-select>
                 </md-input-container>
@@ -24,16 +24,19 @@
             <div layout-gt-xs="row" ng-show="vm.actoption=='LAN' && vm.lanactoption=='FIX IP'">
                 <div flex=25>
                     <span>IP:</span>
-                    <input type="text">
+                    <input type="text" ng-model="vm.ipmask.ip">
                 </div>
                 <div flex=25>
                     <span>Maszk:</span>
-                    <input type="text">
+                    <input type="text" ng-model="vm.ipmask.mask">
                 </div>
                 <div flex=25>
                     <span>Gateway:</span>
-                    <input type="text">
+                    <input type="text" ng-model="vm.ipmask.gateway">
                 </div>
+                <!-->div flex=25>
+                    <md-button class="md-primary md-raised" ng-click="vm.save(vm.ipmask)">Mentés</md-button>
+                </div-->
             </div>
         </md-divider>
     </div>

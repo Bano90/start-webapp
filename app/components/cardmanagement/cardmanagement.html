@@ -23,6 +23,7 @@
                 <th md-column>Név</th>
                 <th md-column>Kód</th>
                 <th md-column>Beosztás</th>
+                <th md-column>Törlés</th>
               </tr>
             </thead>
             <tbody md-body>
@@ -30,6 +31,11 @@
                 <td md-cell>{{item.name}}</td>
                 <td md-cell>{{item.code}}</td>
                 <td md-cell>{{item.status}}</td>
+                <td md-cell>
+                  <md-button class="md-fab md-warn md-hue-2" ng-click="vm.remove(item.id,$index)">
+                    <md-icon class="material-icons">delete_forever</md-icon>
+                  </md-button>
+                </td>
               </tr>
             </tbody>
           </table>

@@ -45,7 +45,7 @@
         method: "DELETE",
         url: 'app/components/PHP/api/card/' + id
       };
-      return $http(req);
+      return $http(request);
     }
     }
   })();

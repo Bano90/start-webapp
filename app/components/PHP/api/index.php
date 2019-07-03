@@ -1,4 +1,5 @@
 <?php
+// ip módosítás
 class ipmaskgateway{
     function put($app,$params)
     {

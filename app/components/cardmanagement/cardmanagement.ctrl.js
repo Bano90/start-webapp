@@ -11,6 +11,7 @@
     vm.cardlist = [];
     vm.load = load;
     vm.saveData = saveData;
+    vm.remove = remove;
 
     activate();
 
@@ -68,6 +69,13 @@
           $scope.status = 'You cancelled the dialog.';
         });
 
+    }
+
+    function remove(id, index) {
+      CardmanagementService.erase(id).then(function (resp) {
+        vm.cardlist.splice(index, 1);
+        setTimeout(load, 3000);
+      });
     }
 
     function activate() {
