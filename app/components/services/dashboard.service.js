@@ -17,7 +17,7 @@
       function get() {
         var req = {
           method: 'GET',
-          url: ''
+          url: 'app/components/files/history.json'
         };
         return $http(req);
       }

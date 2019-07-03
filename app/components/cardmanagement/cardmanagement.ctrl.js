@@ -19,7 +19,6 @@
     function load() {
       CardmanagementService.get().then(function (response) {
         vm.cardlist = response.data;
-        console.log(vm.cardlist);
       });
     }
 
@@ -49,6 +48,7 @@
         }
         CardmanagementService.post(data).then(function (resp) {
           data = {};
+          setTimeout(load, 3000);
         });
         $mdDialog.hide(diaid, dianame, diacode, diastatus);
       };
@@ -67,11 +67,10 @@
         }, function () {
           $scope.status = 'You cancelled the dialog.';
         });
+
     }
 
     function activate() {
-      //load();
-      //save();
     }
   }
 })();

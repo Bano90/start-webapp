@@ -9,6 +9,7 @@
     function NetworkService($http) {
       var service = {
         get: get,
+        put: put
       };
   
       return service;
@@ -17,9 +18,17 @@
       function get() {
         var req = {
           method: 'GET',
-          url: ''
+          url: 'app/components/PHP/api/ipmask'
         };
         return $http(req);
       }
+      function put(data) {
+        var req = {
+            method: 'PUT',
+            url: 'app/components/PHP/api/card/' + data.id,
+            data: data
+        };
+        return $http(req);
+    }
     }
   })();
