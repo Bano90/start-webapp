@@ -8,6 +8,15 @@
         </h1>
         <md-divider>
             <div layout-gt-xs="row">
+                <md-input-container>
+                    <label>Kártyakód:</label>
+                    <md-select ng-model="vm.actcode">
+                        <md-option ng-value="">Mind</md-option>
+                        <md-option ng-repeat="it in (vm.data| unique:'code')" ng-value="it.code">{{it.code}}</md-option>
+                    </md-select>
+                </md-input-container>
+            </div>
+            <div layout-gt-xs="row">
                 <md-table-container flex>
                     <table md-table>
                         <thead md-head>
@@ -20,7 +29,7 @@
                             </tr>
                         </thead>
                         <tbody md-body>
-                            <tr md-row ng-repeat="item in vm.data track by $index">
+                            <tr md-row ng-repeat="item in vm.data |filter:{'code':vm.actcode} track by $index">
                                 <td md-cell>{{item.name}}</td>
                                 <td md-cell>{{item.code}}</td>
                                 <td md-cell>{{item.status}}</td>

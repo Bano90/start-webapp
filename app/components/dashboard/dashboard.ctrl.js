@@ -9,12 +9,14 @@
     function DashboardController($state, $rootScope, $filter,DashboardService) {
       var vm = this;
       vm.data=[];
+      vm.actcode="";
   
       activate();
   
       ////////////////
 
       function load(){
+        vm.code=[];
         DashboardService.get().then(function(response){
           vm.data=response.data;
         });
